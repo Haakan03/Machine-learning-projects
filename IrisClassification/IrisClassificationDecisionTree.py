@@ -6,6 +6,19 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 
 
+class Node:
+    def __init__(self, feature=None, threshold=None, left=None, right=None,*,value=None):
+        self.feature = feature
+        self.threshold = threshold
+        self.left = left
+        self.right = right
+        self.value = None
+
+class DescisionTree:
+    def __init__(self):
+        pass
+
+
 path = kagglehub.dataset_download("arshid/iris-flower-dataset")
 
 csv_path = os.path.join(path, "Iris.csv")
