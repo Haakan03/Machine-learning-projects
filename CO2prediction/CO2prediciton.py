@@ -24,8 +24,8 @@ X_test = scaler.transform(X_test)
 
 model = tf.keras.Sequential([
     tf.keras.layers.Dense(64, activation="relu", input_shape=(X_train.shape[1],)),
-    tf.keras.layers.Dense(64, activation="relu"),
     tf.keras.layers.Dense(128, activation="relu"),
+    tf.keras.layers.Dense(64, activation="relu"),
     tf.keras.layers.Dense(1)  # <--- bare 1 output, ingen aktiveringsfunksjon!
 ])
 
@@ -34,7 +34,7 @@ model.compile(optimizer="adam",
               metrics=["mae"])
 
 history = model.fit(X_train, Y_train,
-          epochs=20,
+          epochs=50,
           validation_data=(X_test, Y_test),
           batch_size=32)
 
